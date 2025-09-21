@@ -83,7 +83,7 @@ for i in range(m, 0, -1):
     print(a*i)
 
 #5
-import numpy as np 
+import numpy as np
 n, m = map(int, input().split())
 st = np.array([0]*m)
 matrix = np.array([st]*n)
@@ -105,13 +105,13 @@ while left<=right and top<=bottom:
         for i in range(right, left - 1, -1):
             matrix[bottom][i] = q
             q += 1
-        bottom -= 1 
+        bottom -= 1
 
     if left <= right:
         for i in range(bottom, top - 1, -1):
             matrix[i][left] = q
             q += 1
-        left += 1 
+        left += 1
 
 print(matrix)
 
@@ -132,7 +132,7 @@ def coeff(x, y):
         sumx2 += (x[i])**2
         sumy += y[i]
         sumxy += x[i]*y[i]
-    a = (n*sumxy-sumx*sumy)/(n*sumx2-sumx**2)      
+    a = (n*sumxy-sumx*sumy)/(n*sumx2-sumx**2)
     return a
 print(coeff(x, y))
 
@@ -141,15 +141,15 @@ n, m = map(int, input().split())
 import numpy as np
 matrix = np.zeros((n, m))
 for i in range(n):
-    q = list(map(int,input().split()))
+    q = list(map(float,input().split()))
     for e in range(m):
         matrix[i][e] = q[e]
 
 def resh(matrix):
 
-    A = matrix[:, :-1] 
+    A = matrix[:, :-1]
     B = matrix[:, -1]
-    
+
     try:
         solution = np.linalg.solve(A, B)
         return solution
